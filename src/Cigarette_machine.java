@@ -9,31 +9,24 @@ public class Cigarette_machine implements  Vending_machine {
 
 
     public Cigarette_machine(HashMap<Vending_item, Integer> stock_target) {
-        this.stock_target = stock_target;
-    }
+        int quantity = 0;
 
-    @Override
-    public void show_stock() {
+        for (Integer i : stock_target.values()){
+            quantity += i;
+        }
+        if (quantity <= 50) {
+            this.stock_target = stock_target;
 
-    }
-
-    @Override
-    public void show_money_in_machine() {
-
-    }
-
-    @Override
-    public void show_popular_item() {
-
-    }
-
-    @Override
-    public void restock() {
-        System.out.println("restocked:\n");
-        for (Object i : stock_current.keySet()) {
-            int dif = stock_target.get(i) - stock_current.get(i);
-
-            System.out.println(i + " : " + dif);
+            for (Vending_item i : stock_target.keySet()) {
+                stock_current.put(i, 0);
+            }
+        } else {
+            System.out.println("This is too much for me :(");
         }
     }
+
+
+
+
+
 }
