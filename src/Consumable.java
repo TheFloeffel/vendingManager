@@ -8,4 +8,14 @@ public class Consumable extends Vending_item {
         super(name, brand, price);
         this.expirations_date = expirations_date;
     }
+
+
+    @Override
+    String stillgood() {
+        if (this.expirations_date.compareTo(LocalDate.now()) >= 0) {
+            return "true";
+        } else {
+            return this.expirations_date.toString();
+        }
+    }
 }

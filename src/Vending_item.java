@@ -9,4 +9,9 @@ public class Vending_item {
         this.brand = brand;
         this.price = price;
     }
+
+
+    String stillgood() {
+        return "true";
+    }
 }

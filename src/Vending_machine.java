@@ -14,7 +14,7 @@ public class Vending_machine {
         initialize(stock_target);
     }
 
-    private void initialize(HashMap<Vending_item, Integer> stock_target){
+    void initialize(HashMap<Vending_item, Integer> stock_target){
         int quantity = 0;
 
         for (Integer i : stock_target.values()){
@@ -83,15 +83,19 @@ public class Vending_machine {
     void purchase(String product_name) {
         for (Vending_item i : stock_current.keySet()) {
             if (i.name.equals(product_name)) {
-                if (stock_current.get(i) > 0) {
-                    int new_value = stock_current.get(i) - 1;
-                    stock_current.replace(i, new_value);
-                    System.out.println("\ncost: " + i.price + " please use the card-reader to pay");
-                    this.money += i.price;
-                    System.out.println("thank you for your purchase");
-                    System.out.println("**product falls out of machine**");
+                if (i.stillgood().equals("true")) {
+                    if (stock_current.get(i) > 0) {
+                        int new_value = stock_current.get(i) - 1;
+                        stock_current.replace(i, new_value);
+                        System.out.println("\n" + i.name + "cost: " + i.price + " please use the card-reader to pay");
+                        this.money += i.price;
+                        System.out.println("thank you for your purchase");
+                        System.out.println("**product falls out of machine**");
+                    } else {
+                        System.out.println("\nsadly we are out of stock");
+                    }
                 } else {
-                    System.out.println("\nsadly we are out of stock");
+                    System.out.println("\ncan't sell this, product expired on " + i.stillgood());
                 }
             }
         }
