@@ -14,6 +14,8 @@ public class Vending_machine {
         initialize(stock_target);
     }
 
+
+    // can be used to define the stock_target on one of the wending machines.
     void initialize(HashMap<Vending_item, Integer> stock_target){
         int quantity = 0;
 
@@ -31,6 +33,7 @@ public class Vending_machine {
         }
     }
 
+    // displays the stock in the machine
     void show_stock() {
         System.out.println("\ncurrent stock:");
         System.out.println("______________");
@@ -39,12 +42,14 @@ public class Vending_machine {
         }
     }
 
+    // displays the current amount of money in the machine
     void show_money_in_machine(){
         System.out.println("\nThis machine houses: ");
         System.out.println("--------------------");
         System.out.println(this.money + " $");
     }
 
+    // displays the most popular item --> most sold
     void show_popular_item(){
         Vending_item pop = null;
         int dif = 0;
@@ -68,6 +73,7 @@ public class Vending_machine {
         }
     }
 
+    // fills current stock back up to the target stock
     void restock(){
         System.out.println("\nrestocked:");
         System.out.println("----------");
@@ -79,7 +85,7 @@ public class Vending_machine {
         }
     }
 
-
+    // enables the user to buy from the machine
     void purchase(String product_name) {
         for (Vending_item i : stock_current.keySet()) {
             if (i.name.equals(product_name)) {
@@ -101,6 +107,7 @@ public class Vending_machine {
         }
     }
 
+    // enables the user to take all the money from the machine --> money in machine goes back to 0
     void get_money(){
         System.out.println("\nThis machine housed: ");
         System.out.println("--------------------");

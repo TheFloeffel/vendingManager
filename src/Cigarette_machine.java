@@ -12,6 +12,7 @@ public class Cigarette_machine extends Vending_machine {
     }
 
 
+    // additionally asks for the users age
     @Override
     void purchase(String product_name) {
         if (age()) {
@@ -21,7 +22,8 @@ public class Cigarette_machine extends Vending_machine {
         }
     }
 
-    boolean age() {
+
+    private boolean age() {
         Scanner scan = new Scanner(System.in);
         System.out.println("please enter your age: ");
         int age = scan.nextInt();
