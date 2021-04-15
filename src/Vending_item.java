@@ -1,7 +1,7 @@
 public class Vending_item {
-    String name;
-    String brand;
-    Double price;
+    protected String name;
+    protected String brand;
+    protected Double price;
 
 
     public Vending_item(String name, String brand, Double price) {

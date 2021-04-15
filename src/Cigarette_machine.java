@@ -23,7 +23,7 @@ public class Cigarette_machine extends Vending_machine {
     }
 
 
-    private boolean age() {
+    protected boolean age() {
         Scanner scan = new Scanner(System.in);
         System.out.println("please enter your age: ");
         int age = scan.nextInt();

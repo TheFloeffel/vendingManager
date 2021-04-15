@@ -1,8 +1,8 @@
 import java.util.HashMap;
 
 public class Vending_machine {
-    int maxstock;
-    double money;
+    protected int maxstock;
+    protected double money;
     HashMap<Vending_item, Integer> stock_target = new HashMap<Vending_item, Integer>();
     HashMap<Vending_item, Integer> stock_current = new HashMap<Vending_item, Integer>();
 

@@ -32,7 +32,7 @@ class Vending_itemTest {
         vendingitems.add(s2);
         vendingitems.add(l1);
         vendingitems.add(c1);
-        
+
     }
 
     // stillgood() from Consumable class
